@@ -1,3 +1,5 @@
+import { fonts } from '../../styles/theme'
+
 export const AppLayout = ({ children }) => {
   return (
     <>
@@ -5,12 +7,16 @@ export const AppLayout = ({ children }) => {
       <style jsx global>{`
         main {
           display: flex;
-          align-items: center;
           height: 100vh;
-          flex-direction: column;
+          flex-direction: row;
+          padding: 20px;
         }
         html,
         body {
+          background-image: url(/bg.jpg);
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
           padding: 0;
           margin: 0;
           font-family: ${fonts.base};
@@ -22,5 +28,5 @@ export const AppLayout = ({ children }) => {
         }
       `}</style>
     </>
-  );
-};
+  )
+}
