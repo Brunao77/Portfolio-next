@@ -6,5 +6,9 @@ export const Apps = [
   {
     img: '/contact.png',
     title: 'Contact'
+  },
+  {
+    img: '/b77.png',
+    title: 'About Me'
   }
 ]
