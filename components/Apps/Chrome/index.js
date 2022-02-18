@@ -1,10 +1,10 @@
-import { Projects } from '../../../constants'
+import { PROJECTS } from '../../../constants'
 import { Project } from './components/Project'
 export const Chrome = () => {
   return (
     <>
       <div>
-        {Projects.map((project, index) => (
+        {PROJECTS.map((project, index) => (
           <Project
             key={index}
             img={project.img}

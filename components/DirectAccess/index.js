@@ -1,10 +1,16 @@
 import Image from 'next/image'
 
-export const DirectAcces = ({ img, title }) => {
+export const DirectAcces = ({ img, title, handleOpen, onOpen }) => {
   return (
     <>
-      <section tabIndex={0}>
-        <Image src={img} width={60} height={60} />
+      <section
+        tabIndex={0}
+        onDoubleClick={() => handleOpen(onOpen)}
+        onKeyPress={(e) =>
+          ['Enter', 'Space'].includes(e.code) && handleOpen(onOpen)
+        }
+      >
+        <Image src={img} width={80} height={80} />
         <h3>{title}</h3>
       </section>
       <style jsx>
@@ -13,8 +19,8 @@ export const DirectAcces = ({ img, title }) => {
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
             justify-content: center;
             cursor: pointer;
             user-select: none;
@@ -27,6 +33,7 @@ export const DirectAcces = ({ img, title }) => {
             background-color: rgba(220, 249, 255, 0.35);
           }
           h3 {
+            font-size: 25px;
             text-align: center;
             margin: 5px;
           }

@@ -1,5 +1,8 @@
-import { Contacts } from '../../../constants'
+import { CONTACTS } from '../../../constants'
 import { createElement } from 'react'
+import Link from 'next/link'
+import { colors } from '../../../styles/theme'
+
 export const Contact = () => {
   return (
     <>
@@ -7,15 +10,12 @@ export const Contact = () => {
         <h1>Brunao77</h1>
         <p>brucolon@gmail.com</p>
         <section>
-          {Contacts.map((contact, index) => (
-            <a
-              key={index}
-              target="_blank"
-              href={contact.href}
-              rel="noopener noreferrer"
-            >
-              {createElement(contact.icon, { href: contact.href })}
-            </a>
+          {CONTACTS.map((contact, index) => (
+            <Link key={index} href={contact.href}>
+              <a target="_blank">
+                {createElement(contact.icon, { href: contact.href })}
+              </a>
+            </Link>
           ))}
         </section>
       </div>
@@ -31,13 +31,13 @@ export const Contact = () => {
           h1 {
             font-size: 80px;
             margin: 0;
-            color: #c74385;
+            color: ${colors.primary};
             user-select: text;
           }
           p {
             font-size: 20px;
             margin: 0;
-            color: #708797;
+            color: ${colors.secondary};
             font-style: italic;
             margin-bottom: 60px;
             user-select: text;
@@ -51,7 +51,7 @@ export const Contact = () => {
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #c74385;
+            background: ${colors.primary};
             border-radius: 100%;
             width: 65px;
             height: 65px;

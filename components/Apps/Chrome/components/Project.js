@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Link from 'next/link'
+import { colors } from '../../../../styles/theme'
 
 export const Project = ({ img, title, repo, web }) => {
   const [isHover, setIsHover] = useState(false)
@@ -86,11 +87,17 @@ export const Project = ({ img, title, repo, web }) => {
             gap: 10px;
           }
           a {
-            background: rgb(216, 100, 95);
+            background: ${colors.primary};
             color: #fff;
             border-radius: 20px;
             text-decoration: none;
             padding: 10px;
+          }
+          a:hover {
+            opacity: 0.8;
+          }
+          a:active {
+            transform: scale(97%);
           }
         `}
       </style>

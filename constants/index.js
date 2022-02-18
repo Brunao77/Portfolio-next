@@ -4,22 +4,32 @@ import Mail from '../components/icons/Mail'
 import Twitch from '../components/icons/Twitch'
 import Twitter from '../components/icons/Twitter'
 
-export const Apps = [
+export const WINDOW_OPEN = {
+  CHROME: 1,
+  CONTACT: 2,
+  ABOUTME: 3,
+  NONE: 0
+}
+
+export const APPS = [
   {
     img: '/chrome.png',
-    title: 'Chrome'
+    title: 'Chrome',
+    onOpen: WINDOW_OPEN.CHROME
   },
   {
     img: '/contact.png',
-    title: 'Contact'
+    title: 'Contact',
+    onOpen: WINDOW_OPEN.CONTACT
   },
   {
     img: '/b77.png',
-    title: 'About Me'
+    title: 'About Me',
+    onOpen: WINDOW_OPEN.ABOUTME
   }
 ]
 
-export const Projects = [
+export const PROJECTS = [
   {
     title: 'Aerolab Challenge',
     img: '/aerolab.PNG',
@@ -46,7 +56,7 @@ export const Projects = [
   }
 ]
 
-export const Contacts = [
+export const CONTACTS = [
   {
     icon: Mail,
     href: 'mailto:brucolon@gmail.com'

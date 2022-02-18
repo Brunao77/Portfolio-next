@@ -1,7 +1,14 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 
-export const Window = ({ children, dragConstraints, tab, width, height }) => {
+export const Window = ({
+  children,
+  dragConstraints,
+  tab,
+  width,
+  height,
+  handleClose
+}) => {
   const [canDrag, toggleCanDrag] = useState(false)
   const [isDragging, toggleIsDragging] = useState(false)
 
@@ -44,7 +51,14 @@ export const Window = ({ children, dragConstraints, tab, width, height }) => {
             <div className="container-dots">
               <div className="minimize"></div>
               <div className="maximize"></div>
-              <div className="close"></div>
+              <div
+                className="close"
+                tabIndex={0}
+                onClick={handleClose}
+                onKeyPress={(e) =>
+                  ['Enter', 'Space'].includes(e.code) && handleClose()
+                }
+              ></div>
             </div>
           </header>
           <section>{children}</section>
@@ -94,19 +108,20 @@ export const Window = ({ children, dragConstraints, tab, width, height }) => {
             width: 15px;
             height: 15px;
             border-radius: 100%;
-            background: rgb(255, 239, 136, 0.3);
+            background: rgb(255, 239, 136, 0.2);
           }
           .maximize {
             width: 15px;
             height: 15px;
             border-radius: 100%;
-            background: rgb(144, 196, 97, 0.3);
+            background: rgb(144, 196, 97, 0.2);
           }
           .close {
             width: 15px;
             height: 15px;
             border-radius: 100%;
             background: red;
+            cursor: pointer;
           }
           section {
             background: #42515a;

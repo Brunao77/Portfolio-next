@@ -1,29 +1,9 @@
 import { fonts } from '../../styles/theme'
-import Windows from '../icons/Windows'
-import { Chrome } from '../Apps/Chrome/index'
-import { useRef } from 'react'
-import { Window } from '../Window/index'
-import { Contact } from '../Apps/Contact'
 
-export const AppLayout = ({ children }) => {
-  const constraintsRef = useRef(null)
+export const AppLayout = ({ children, constraintsRef }) => {
   return (
     <>
-      <main ref={constraintsRef}>
-        {children}
-
-        <Window
-          dragConstraints={constraintsRef}
-          tab="Projects"
-          height="400px"
-          width="700px"
-        >
-          <Contact />
-        </Window>
-      </main>
-      <footer>
-        <Windows />
-      </footer>
+      <main ref={constraintsRef}>{children}</main>
       <style jsx global>{`
         main {
           display: flex;
@@ -31,13 +11,6 @@ export const AppLayout = ({ children }) => {
           height: 95vh;
           flex-direction: row;
           padding: 20px;
-        }
-        footer {
-          height: 5vh;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: rgba(220, 249, 255, 0.15);
         }
         html,
         body {
