@@ -1,7 +1,9 @@
 import { fonts } from '../../styles/theme'
 import Windows from '../icons/Windows'
-import { Chrome } from '../Windows/Chrome'
+import { Chrome } from '../Apps/Chrome/index'
 import { useRef } from 'react'
+import { Window } from '../Window/index'
+import { Contact } from '../Apps/Contact'
 
 export const AppLayout = ({ children }) => {
   const constraintsRef = useRef(null)
@@ -9,7 +11,15 @@ export const AppLayout = ({ children }) => {
     <>
       <main ref={constraintsRef}>
         {children}
-        <Chrome dragConstraints={constraintsRef}></Chrome>
+
+        <Window
+          dragConstraints={constraintsRef}
+          tab="Projects"
+          height="400px"
+          width="700px"
+        >
+          <Contact />
+        </Window>
       </main>
       <footer>
         <Windows />
