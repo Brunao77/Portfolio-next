@@ -40,7 +40,7 @@ export const PROJECTS = [
     title: 'Higher or Lower',
     img: '/HorL.PNG',
     repo: 'https://github.com/Brunao77/Next-Higher-or-Lower-YT',
-    web: ''
+    web: 'https://higherorloweryt.vercel.app/'
   },
   {
     title: 'ML Challenge',
