@@ -32,7 +32,7 @@ export const APPS = [
 export const PROJECTS = [
   {
     title: 'Aerolab Challenge',
-    img: '/aerolab.PNG',
+    img: '/Aerolab.PNG',
     repo: 'https://github.com/Brunao77/Aerolab-Challenge',
     web: 'https://brunao77.github.io/Aerolab-Challenge/'
   },
