@@ -45,8 +45,8 @@ export const PROJECTS = [
   {
     title: 'ML Challenge',
     img: '/ML.PNG',
-    repo: 'https://github.com/Brunao77/Challenge-Mercado-Libre',
-    web: 'https://brunao77.github.io/Challenge-Mercado-Libre/'
+    repo: 'https://github.com/Brunao77/challenge-MeLi',
+    web: 'https://challengemeli.vercel.app/'
   },
   {
     title: 'Adviency',
