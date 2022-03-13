@@ -12,7 +12,7 @@ export const Aboutme = () => {
           currently studying Information Systems Engineering.
         </p>
         <section>
-          <Link href="/CV-Bruno-Munne.pdf">
+          <Link href="/Resume-Bruno Munne.pdf">
             <a target="_blank">Resume</a>
           </Link>
         </section>
