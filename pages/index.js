@@ -1,12 +1,9 @@
 import Head from 'next/head'
 import { AppLayout } from '../components/AppLayout'
-import { DirectAcces } from '../components/DirectAccess'
+import { DirectAccess } from '../components/DirectAccess'
 import { APPS, WINDOW_OPEN } from '../constants'
 import { Window } from '../components/Window'
-import { Chrome } from '../components/Apps/Chrome'
-import { Aboutme } from '../components/Apps/Aboutme'
-import { Contact } from '../components/Apps/Contact'
-import { useRef, useState } from 'react'
+import { useRef, useState, createElement } from 'react'
 
 export default function Home() {
   const [windowOpen, setWindowOpen] = useState(WINDOW_OPEN.NONE)
@@ -27,7 +24,7 @@ export default function Home() {
       </Head>
       <AppLayout constraintsRef={constraintsRef}>
         {APPS.map((app, index) => (
-          <DirectAcces
+          <DirectAccess
             key={index}
             onOpen={app.onOpen}
             handleOpen={handleOpen}
@@ -35,53 +32,24 @@ export default function Home() {
             title={app.title}
           />
         ))}
-        {windowOpen === WINDOW_OPEN.CHROME && (
-          <Window
-            dragConstraints={constraintsRef}
-            tab="Projects"
-            height="650px"
-            width="1000px"
-            handleClose={handleClose}
-          >
-            <Chrome />
-          </Window>
-        )}
-        {windowOpen === WINDOW_OPEN.CONTACT && (
-          <Window
-            dragConstraints={constraintsRef}
-            tab="Contact"
-            height="400px"
-            width="700px"
-            handleClose={handleClose}
-          >
-            <Contact />
-          </Window>
-        )}
-        {windowOpen === WINDOW_OPEN.ABOUTME && (
-          <Window
-            dragConstraints={constraintsRef}
-            tab="About Me"
-            height="300px"
-            width="700px"
-            handleClose={handleClose}
-          >
-            <Aboutme />
-          </Window>
-        )}
+        {APPS.map((app) => {
+          if (app.onOpen === windowOpen) {
+            return (
+              <Window
+                dragConstraints={constraintsRef}
+                tab={app.tab}
+                height={app.height}
+                width={app.width}
+                handleClose={handleClose}
+              >
+                {createElement(app.component)}
+              </Window>
+            )
+          }
+          return null
+        })}
       </AppLayout>
-      <style jsx>
-        {`
-          div {
-            background-color: #fff;
-            width: 60px;
-            height: 60px;
-            border-radius: 999px;
-          }
-          h3 {
-            margin: 0;
-          }
-        `}
-      </style>
+      <style jsx>{``}</style>
     </>
   )
 }
