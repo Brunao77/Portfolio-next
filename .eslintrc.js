@@ -19,6 +19,7 @@ module.exports = {
     'react/prop-types': 'off',
     'multiline-ternary': 'off',
     indent: 'off',
-    'react/no-unescaped-entities': 'off'
+    'react/no-unescaped-entities': 'off',
+    'react/jsx-no-comment-textnodes': 'off'
   }
 }
