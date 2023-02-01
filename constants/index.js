@@ -3,6 +3,9 @@ import Linkedin from '../components/icons/Linkedin'
 import Mail from '../components/icons/Mail'
 import Twitch from '../components/icons/Twitch'
 import Twitter from '../components/icons/Twitter'
+import { Chrome } from '../components/Apps/Chrome'
+import { Aboutme } from '../components/Apps/Aboutme'
+import { Contact } from '../components/Apps/Contact'
 
 export const WINDOW_OPEN = {
   CHROME: 1,
@@ -13,19 +16,31 @@ export const WINDOW_OPEN = {
 
 export const APPS = [
   {
-    img: '/chrome.png',
+    img: '/chrome.svg',
     title: 'Chrome',
-    onOpen: WINDOW_OPEN.CHROME
+    onOpen: WINDOW_OPEN.CHROME,
+    tab: 'Projects',
+    height: '450px',
+    width: '680px',
+    component: Chrome
   },
   {
-    img: '/contact.png',
+    img: '/contact.svg',
     title: 'Contact',
-    onOpen: WINDOW_OPEN.CONTACT
+    onOpen: WINDOW_OPEN.CONTACT,
+    tab: 'Contact',
+    height: '300px',
+    width: '600px',
+    component: Contact
   },
   {
     img: '/b77.png',
     title: 'About Me',
-    onOpen: WINDOW_OPEN.ABOUTME
+    onOpen: WINDOW_OPEN.ABOUTME,
+    tab: 'About Me',
+    height: '300px',
+    width: '600px',
+    component: Aboutme
   }
 ]
 
@@ -49,10 +64,10 @@ export const PROJECTS = [
     web: 'https://challengemeli.vercel.app/'
   },
   {
-    title: 'Adviency',
-    img: '/Adviency.PNG',
-    repo: 'https://github.com/Brunao77/Challenge-24Days-Christmas',
-    web: 'https://uuuc3.csb.app/'
+    title: 'Scorers',
+    img: '/Scorers.PNG',
+    repo: 'https://github.com/Brunao77/goals-hol',
+    web: 'https://scorers.vercel.app/'
   }
 ]
 
