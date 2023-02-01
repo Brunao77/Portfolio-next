@@ -1,12 +1,12 @@
 import Image from 'next/image'
 
-export const DirectAcces = ({ img, title, handleOpen, onOpen }) => {
+export const DirectAccess = ({ img, title, handleOpen, onOpen }) => {
   return (
     <>
       <section
         tabIndex={0}
         onDoubleClick={() => handleOpen(onOpen)}
-        onKeyPress={(e) =>
+        onKeyDown={(e) =>
           ['Enter', 'Space'].includes(e.code) && handleOpen(onOpen)
         }
       >
