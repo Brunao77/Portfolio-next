@@ -23,10 +23,10 @@ export const Project = ({ img, title, repo, web }) => {
               <h1>{title}</h1>
               <section>
                 <Link href={repo}>
-                  <a target="_blank">Repositorio</a>
+                  <a target="_blank">Repository</a>
                 </Link>
                 <Link href={web}>
-                  <a target="_blank">Sitio Web</a>
+                  <a target="_blank">Web Site</a>
                 </Link>
               </section>
             </div>
