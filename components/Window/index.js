@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import { colors } from '../../styles/theme'
 
 export const Window = ({
   children,
@@ -49,16 +50,16 @@ export const Window = ({
           >
             <p>{tab}</p>
             <div className="container-dots">
-              <div className="minimize"></div>
-              <div className="maximize"></div>
-              <div
+              <span className="minimize"></span>
+              <span className="maximize"></span>
+              <span
                 className="close"
                 tabIndex={0}
                 onClick={handleClose}
-                onKeyPress={(e) =>
+                onKeyDown={(e) =>
                   ['Enter', 'Space'].includes(e.code) && handleClose()
                 }
-              ></div>
+              ></span>
             </div>
           </header>
           <section>{children}</section>
@@ -72,31 +73,25 @@ export const Window = ({
           }
           p {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid #1c343e;
-            height: 100%;
-            width: 100px;
-            border-bottom: none;
-            border-radius: 10px 10px 0 0;
+            font-weight: 400;
             text-align: center;
-            margin: 0;
-            background: #1c343e;
-            color: white;
-            padding-top: 2px;
-            font-weight: 100;
+            color: ${colors.white};
           }
           header {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            background: #16272e;
-            padding: 2px 20px 0 0px;
-            color: black;
+            background: rgb(155, 10, 10);
+            background: linear-gradient(
+              90deg,
+              rgba(155, 10, 10, 1) 0%,
+              rgba(168, 11, 9, 1) 35%,
+              rgba(166, 11, 9, 1) 100%
+            );
+            padding: 20px;
             height: 40px;
             border-radius: 10px 10px 0 0;
-            font-weight: bold;
           }
           .container-dots {
             display: flex;
@@ -108,23 +103,29 @@ export const Window = ({
             width: 15px;
             height: 15px;
             border-radius: 100%;
-            background: rgb(255, 239, 136, 0.2);
+            background: #ebb523;
           }
           .maximize {
             width: 15px;
             height: 15px;
             border-radius: 100%;
-            background: rgb(144, 196, 97, 0.2);
+            background: #28bc47;
           }
           .close {
             width: 15px;
             height: 15px;
             border-radius: 100%;
-            background: red;
+            background: #f25854;
             cursor: pointer;
           }
           section {
-            background: #42515a;
+            background: rgb(1, 17, 69);
+            background: linear-gradient(
+              90deg,
+              rgba(1, 17, 69, 1) 0%,
+              rgba(15, 32, 83, 1) 35%,
+              rgba(22, 90, 151, 1) 100%
+            );
             padding: 20px;
             height: ${height};
             border-radius: 0 0 10px 10px;
