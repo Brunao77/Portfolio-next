@@ -6,9 +6,9 @@ export const Aboutme = () => {
     <>
       <div>
         <h1>Bruno Munné</h1>
-        <h2>Front End Developer</h2>
+        <h2>Full Stack Developer</h2>
         <p>
-          I'm an Argentine passionate about the world of technology, I'm
+          I'm Argentinean passionate about the world of technology, I'm
           currently studying Information Systems Engineering.
         </p>
         <section>
@@ -19,6 +19,13 @@ export const Aboutme = () => {
       </div>
       <style jsx>
         {`
+          div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            height: 100%;
+          }
           h1 {
             margin: 0;
             color: ${colors.primary};
