@@ -65,7 +65,7 @@ export const PROJECTS = [
   },
   {
     title: 'Scorers',
-    img: '/Scorers.PNG',
+    img: '/Scorers.png',
     repo: 'https://github.com/Brunao77/goals-hol',
     web: 'https://scorers.vercel.app/'
   }
